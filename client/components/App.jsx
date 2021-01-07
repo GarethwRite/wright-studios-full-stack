@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+
 import { fetchFruits } from '../actions'
+import Navbar from './Navbar'
 
 export class App extends React.Component {
   state = {
@@ -15,12 +17,8 @@ export class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {this.props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
+        <Navbar/>
+        <h1>Wright Studios</h1>
       </div>
     )
   }
@@ -33,3 +31,11 @@ function mapStateToProps (globalState) {
 }
 
 export default connect(mapStateToProps)(App)
+
+
+//fruits database list
+{/* <ul>
+  {this.props.fruits.map(fruit => (
+    <li key={fruit}>{fruit}</li>
+  ))}
+</ul> */}
